@@ -13,6 +13,8 @@
 
 [LICENSE](https://github.com/Kimitsuna-Goblin/kowake/blob/master/LICENSE) - ライセンスファイルです。本 Excel ファイルを再配布する場合は、必ず添付してください。
 
+[README.md](https://github.com/Kimitsuna-Goblin/kowake/blob/master/README.md) - この README ファイルです。
+
 
 ## 動作環境 - Operating Environment
 
