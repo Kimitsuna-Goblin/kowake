@@ -26,7 +26,7 @@ Excel Online では、残念ながら動作しません (2021年2月11日確認)
 
 ## 使用方法 - Usage
 
-[使い方の説明動画](https://youtu.be/XuWe7ZRz2yQ) を見てくださいww。
+YouTube の [使い方の説明動画](https://youtu.be/XuWe7ZRz2yQ) を見てくださいww。
 
 
 使い方の補足です。
