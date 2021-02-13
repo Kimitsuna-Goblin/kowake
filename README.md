@@ -11,6 +11,8 @@
 
 [How-To-Use.mp4](https://github.com/Kimitsuna-Goblin/kowake/blob/master/How-To-Use.mp4) - 使い方の説明動画です。[YouTube](https://youtu.be/XuWe7ZRz2yQ) にも同じ動画があります。YouTube の動画は限定公開のため、検索では出てきません。
 
+[LICENSE](https://github.com/Kimitsuna-Goblin/kowake/blob/master/LICENSE) - ライセンスファイルです。本 Excel ファイルを再配布する場合は、必ず添付してください。
+
 
 ## 動作環境 - Operating Environment
 
@@ -63,6 +65,7 @@ Excel Online では、残念ながら動作しません (2021年2月11日確認)
 ただし、本 Excel ファイルの著作者および、医薬品マスターデータ提供者は、
 当該ファイルを使用したために生じた損害、損失について、いかなる責任も負わないものとします。
 
+なお、ファイルを再配布する場合は、必ず LICENSE ファイルを添付してください。
 
 ## 著作者 - Author
 
