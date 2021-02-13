@@ -7,7 +7,7 @@
 
 ### ファイル - Files
 
-[kowake.xlsx](https://github.com/Kimitsuna-Goblin/kowake/blob/master/kowake.xlsx) - 本体の Excelファイルです。
+[kowake.xlsx](https://github.com/Kimitsuna-Goblin/kowake/blob/master/kowake.xlsx) - 本体の Excel ファイルです。
 
 [How-To-Use.mp4](https://github.com/Kimitsuna-Goblin/kowake/blob/master/How-To-Use.mp4) - 使い方の説明動画です。[YouTube](https://youtu.be/XuWe7ZRz2yQ) にも同じ動画があります。YouTube の動画は限定公開のため、検索では出てきません。
 
@@ -57,6 +57,10 @@ Excel Online では、残念ながら動作しません (2021年2月11日確認)
 ## ライセンス - License
 
 [MIT](https://github.com/Kimitsuna-Goblin/kowake/blob/master/LICENSE)
+
+本 Excel ファイルは、MITライセンスのもとで、基本的に自由に使用できますが、
+本 Excel ファイルの著作者および、医薬品マスターデータ提供者は、
+当該ファイルを使用したために生じた損害、損失についていかなる責任も負わないものとします。
 
 
 ## 著作者 - Author
