@@ -56,7 +56,7 @@ Excel Online では、残念ながら動作しません (2021年2月11日確認)
 
 ## ライセンス - License
 
-[MIT](https://github.com/Kimitsuna-Goblin/extClark/blob/master/LICENSE)
+[MIT](https://github.com/Kimitsuna-Goblin/kowake/blob/master/LICENSE)
 
 
 ## 著作者 - Author
