@@ -9,7 +9,7 @@
 
 [kowake.xlsx](https://github.com/Kimitsuna-Goblin/kowake/blob/master/kowake.xlsx) - 本体の Excel ファイルです。
 
-[How-To-Use.mp4](https://github.com/Kimitsuna-Goblin/kowake/blob/master/How-To-Use.mp4) - 使い方の説明動画です。[YouTube](https://youtu.be/XuWe7ZRz2yQ) にも同じ動画があります。YouTube の動画は限定公開のため、検索では出てきません。
+[How-To-Use.mp4](https://github.com/Kimitsuna-Goblin/kowake/blob/master/How-To-Use.mp4) - 使い方の説明動画です。[YouTube](https://youtu.be/XuWe7ZRz2yQ) にも同じ動画があります (YouTube の動画は限定公開のため、検索では出てきません)。
 
 [LICENSE](https://github.com/Kimitsuna-Goblin/kowake/blob/master/LICENSE) - ライセンスファイルです。本 Excel ファイルを再配布する場合は、必ず添付してください。
 
