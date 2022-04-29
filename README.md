@@ -7,7 +7,7 @@
 
 ### ファイル - Files
 
-[kowake.xlsx](https://github.com/Kimitsuna-Goblin/kowake/blob/master/kowake.xlsx) - 本体の Excel ファイルです。
+[kowake.xlsx](https://github.com/Kimitsuna-Goblin/kowake/blob/master/kowake.xlsx) - 本体 (メイン) の Excel ファイルです。
 
 [kowake.no-master.xlsx](https://github.com/Kimitsuna-Goblin/kowake/blob/master/kowake.no-master.xlsx) - 医薬品マスタが付属してないバージョンです。医薬品名や単価の検索はできません。消費税計算と合計計算はできます。医薬品名や単価を自分で入力したいときに使ってください。
 
