@@ -1,0 +1,31 @@
+// kowake ツール用に、社会保険診療報酬支払基金の医薬品マスターのCSVファイルを整形する秀丸エディタ用マクロ
+// (C) 2023 Ura Kimitsuna
+// Released under the MIT license. see https://opensource.org/licenses/MIT/
+// まあ、要するに、一応著作権は主張してるけど、勝手に編集したり再配布したりしていいよってことです。
+replaceallfast "\"([．０-９Ｗ／Ｖｗｖ]+％)([^　\",\\n]+)", "\"\\2\\1", 0x00000012;
+replaceallfast "[　（]+[^　（]*として[^\",]+", "", 0x00000012;
+replaceallfast "^[^\\n]*[^Ｔ]ＯＡ[^\\n]*\\n", "", 0x00000012;
+replaceallfast "^[^\\n]*[１-９][歯顎][^\\n]*\\n", "", 0x00000012;
+replaceallfast "（レボフロキサシン）", "", 0;
+replaceallfast "\"([０-９ｍｃｇ]+ｇ)([^　\",\\n]+)", "\"\\2\\1", 0x00000012;
+replaceallfast "^([^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,)\"\",", "\\1\"－\",", 0x00000012;
+replaceallfast "^[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,\"[0.]+\",[^\\n]*\\n", "", 0x00000012;
+#oldCompatibleMode = setcompatiblemode( 0x00100000 );
+setsearch "^[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,", 0x00000012;
+selectallfound;
+filter "", "ToHankakuAlnum";
+escape;
+replaceallfast "“化血研\"", "“化血研”", 0;
+replaceallfast "([0-9]+)千", "\\1000#千", 0x00000012;
+replaceallfast "([0-9]+)万", "\\10000#万", 0x00000012;
+replaceallfast "([^0-9#])千", "\\11000#1千", 0x00000012;
+replaceallfast "([^0-9#])百万", "\\11000000#1百万", 0x00000012;
+selectall;
+setcompatiblemode 0x0F;
+filter "" , "Sort" , "000100110004001\"11001";
+setcompatiblemode( #oldCompatibleMode );
+escape;
+replaceallfast "000#千", "千", 0;
+replaceallfast "0000#万", "万", 0;
+replaceallfast "1000#1千", "千", 0;
+replaceallfast "1000000#1百万", "百万", 0;

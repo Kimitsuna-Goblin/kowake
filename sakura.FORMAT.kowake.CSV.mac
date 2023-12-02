@@ -1,0 +1,224 @@
+// kowake ツール用に、社会保険診療報酬支払基金の医薬品マスターのCSVファイルを整形するサクラエディタ用マクロ
+// (C) 2023 Ura Kimitsuna
+// Released under the MIT license. see https://opensource.org/licenses/MIT/
+// まあ、要するに、一応著作権は主張してるけど、勝手に編集したり再配布したりしていいよってことです。
+
+// 医薬品名と規格単位を整形する。
+ReplaceAll('"([．０-９Ｗ／Ｖｗｖ]+％)([^　",\\n]+)', '"\\2\\1', 28); // 規格 (％) が医薬品名の前にあるデータに対して、規格を医薬品名の後に移動
+ReDraw(0);  // 再描画
+ReplaceAll('[　（]+[^　（]*として[^",]+', '', 28);  // 薬効成分のコメントを削除
+ReDraw(0);  // 再描画
+ReplaceAll('^[^\\n]*[^Ｔ]ＯＡ[^\\n]*\\n', '', 28);  // 歯科処置 (局所麻酔) 用の薬価データを削除
+ReDraw(0);  // 再描画
+ReplaceAll('^[^\\n]*[１-９][歯顎][^\\n]*\\n', '', 28);  // 歯科処置 (ステロイド塗布など) 用の薬価データを削除
+ReDraw(0);  // 再描画
+ReplaceAll('（レボフロキサシン）', '', 24); // 「（レボフロキサシン）」のコメントを削除
+ReDraw(0);  // 再描画
+ReplaceAll('"([０-９ｍｃｇ]+ｇ)([^　",\\n]+)', '"\\2\\1', 28);   // 規格 (成分量) が医薬品名の前にあるデータに対して、規格を医薬品名の後に移動
+ReDraw(0);  // 再描画
+ReplaceAll('^([^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,)"",', '\\1"－",', 28); // 規格の単位が無い医薬品の単位を「－」にする
+ReDraw(0);  // 再描画
+ReplaceAll('^[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,"[0.]+",[^\n]*\n', '', 28); // 薬価が無いデータを削除
+
+// 医薬品名と規格の英数字を半角に変換するために、矩形選択をする。
+// 安全に矩形選択するために、スペースをいっぱい (117個以上) 空ける。
+ReplaceAll('(^[^,]*,[^,]*,[^,]*,[^,]*,[^,]*),', '\\1                                                                                                                        ,', 28);
+ReDraw(0);  // 再描画
+
+GoFileEnd();    // 矩形範囲選択は、上から下にやるとうまく行かないので、下から上に行う。そのため、ファイルの最後に移動
+Up();           // 1行だけ上に移動 (これで最終行の先頭にカーソルが移動できた)
+BeginBoxSelect(0);  // 矩形範囲選択開始
+Right_BoxSel(0);    // (矩形選択)カーソル右移動 (以下、この行を含めて116回続ける)
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);    // 10回
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);    // 20回
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);    // 30回 (まだまだ)
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);    // 40回
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);    // 50回
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);    // 60回 (がんばれー)
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);    // 70回
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);    // 80回
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);    // 90回
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);    // 100回 (あともう少し！)
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);    // 110回
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);
+Right_BoxSel(0);    // (矩形選択)カーソル右移動 (以上116回)
+GoFileTop_BoxSel(); // (矩形矩形選択)ファイルの先頭に移動 (これで矩形範囲選択完了)
+ToHanEi(0); // 全角英数→半角英数
+ReplaceAll('                                                                                                                        ', '', 24); // さっき空けたスペースを削除
+ReDraw(0);  // 再描画
+
+// 「“化血研”」の全角引用符「”」が半角に変換されてしまうので、全角に戻す。
+ReplaceAll('“化血研"', '“化血研”', 24);
+ReDraw(0);  // 再描画
+
+// 規格の数値でソートするために、漢数字を数字に変換し、桁数区切りを一時的に削除する。
+ReplaceAll('([0-9]+)千', '\\1 000#千', 28);
+ReDraw(0);  // 再描画
+ReplaceAll(' 000#千', '000#千', 24);
+ReDraw(0);  // 再描画
+ReplaceAll('([0-9]+)万', '\\1 0000#万', 28);
+ReDraw(0);  // 再描画
+ReplaceAll(' 0000#万', '0000#万', 24);
+ReDraw(0);  // 再描画
+ReplaceAll('([^0-9#])千', '\\1 1000#1千', 28);
+ReDraw(0);  // 再描画
+ReplaceAll(' 1000#1千', '1000#1千', 24);
+ReDraw(0);  // 再描画
+ReplaceAll('([^0-9#])百万', '\\1 1000000#1百万', 28);
+ReDraw(0);  // 再描画
+ReplaceAll(' 1000000#1百万', '1000000#1百万', 24);
+ReDraw(0);  // 再描画
+ReplaceAll(',000', '000#c桁', 24);
+ReDraw(0);  // 再描画
+
+// ソート用に、医薬品名と規格の数値を各行の先頭にコピーする。小数と整数のソートに気をつけて (2.5 と 5 など)。整数は7桁まである。
+ReplaceAll('(^[^,]*,[^,]*,[^,]*,[^,]*,")([^0-9",]*)', '\\2\\1\\2', 28); // 医薬品名をコピー
+ReDraw(0);  // 再描画
+ReplaceAll('(^[^"]*)([^,]*,[^,]*,[^,]*,[^,]*,"[^0-9",]*)([0-9])([^0-9.,]+)', '\\1 000000 \\3\\2\\3\\4', 28);    // 1桁の整数を0埋めしてコピー
+ReDraw(0);  // 再描画
+ReplaceAll(' 000000 ', '000000', 24);
+ReDraw(0);  // 再描画
+ReplaceAll('(^[^"]*)([^,]*,[^,]*,[^,]*,[^,]*,"[^0-9",]*)([0-9][0-9])([^0-9.,]+)', '\\1 00000 \\3\\2\\3\\4', 28);    // 2桁の整数を0埋めしてコピー
+ReDraw(0);  // 再描画
+ReplaceAll(' 00000 ', '00000', 24);
+ReDraw(0);  // 再描画
+ReplaceAll('(^[^"]*)([^,]*,[^,]*,[^,]*,[^,]*,"[^0-9",]*)([0-9][0-9][0-9])([^0-9.,]+)', '\\1 0000 \\3\\2\\3\\4', 28);    // 3桁の整数を0埋めしてコピー
+ReDraw(0);  // 再描画
+ReplaceAll(' 0000 ', '0000', 24);
+ReDraw(0);  // 再描画
+ReplaceAll('(^[^"]*)([^,]*,[^,]*,[^,]*,[^,]*,"[^0-9",]*)([0-9][0-9][0-9][0-9])([^0-9.,]+)', '\\1 000 \\3\\2\\3\\4', 28);    // 4桁の整数を0埋めしてコピー
+ReDraw(0);  // 再描画
+ReplaceAll(' 000 ', '000', 24);
+ReDraw(0);  // 再描画
+ReplaceAll('(^[^"]*)([^,]*,[^,]*,[^,]*,[^,]*,"[^0-9",]*)([0-9][0-9][0-9][0-9][0-9])([^0-9.,]+)', '\\1 00 \\3\\2\\3\\4', 28);    // 5桁の整数を0埋めしてコピー
+ReDraw(0);  // 再描画
+ReplaceAll(' 00 ', '00', 24);
+ReDraw(0);  // 再描画
+ReplaceAll('(^[^"]*)([^,]*,[^,]*,[^,]*,[^,]*,"[^0-9",]*)([0-9][0-9][0-9][0-9][0-9][0-9])([^0-9.,]+)', '\\1 0 \\3\\2\\3\\4', 28);    // 6桁の整数を0埋めしてコピー
+ReDraw(0);  // 再描画
+ReplaceAll(' 0 ', '0', 24);
+ReDraw(0);  // 再描画
+ReplaceAll('(^[^"]*)([^,]*,[^,]*,[^,]*,[^,]*,"[^0-9",]*)([0-9][0-9][0-9][0-9][0-9][0-9][0-9])([^0-9.,]+)', '\\1\\3\\2\\3\\4', 28);  // 7桁の整数を0埋めしてコピー
+ReDraw(0);  // 再描画
+ReplaceAll('(^[^"]*)([^,]*,[^,]*,[^,]*,[^,]*,"[^0-9",]*)([0-9]\.[0-9]+)([^0-9.,]+)', '\\1 000000 \\3\\2\\3\\4', 28);    // 小数点を含む数値を0埋めしてコピー
+ReDraw(0);  // 再描画
+ReplaceAll(' 000000 ', '000000', 24);
+ReDraw(0);  // 再描画
+ReplaceAll('(^[^"]*)([^,]*,[^,]*,[^,]*,[^,]*,"[^0-9",]*[0-9.]+)([^0-9."][^"]*)', '\\1\\3\\2\\3', 28);    // 数値の後に続く医薬品名の文字列をコピー
+ReDraw(0);  // 再描画
+
+SelectAll(0);   // すべて選択
+SortAsc(0); // 選択行の昇順ソート
+ReplaceAll('^[^"]*', '', 28);   // ソート用にコピーしていた、医薬品名＋規格の数値を削除
+ReDraw(0);  // 再描画
+
+// ソートが完了したので、変換していた漢数字と桁数区切りを元に戻す。
+ReplaceAll('000#千', '千', 24);
+ReplaceAll('0000#万', '万', 24);
+ReplaceAll('1000#1千', '千', 24);
+ReplaceAll('1000000#1百万', '百万', 24);
+ReplaceAll('000#c桁', ',000', 24);
+ReDraw(0);  // 再描画
+// 終了

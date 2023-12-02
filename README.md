@@ -11,6 +11,10 @@
 
 [kowake.no-master.xlsx](https://github.com/Kimitsuna-Goblin/kowake/blob/master/kowake.no-master.xlsx) - 医薬品マスタが付属してないバージョンです。医薬品名や単価の検索はできません。消費税計算と合計計算はできます。医薬品名や単価を自分で入力したいときに使ってください。
 
+[FORMAT.kowake.CSV.mac](https://github.com/Kimitsuna-Goblin/kowake/blob/master/FORMAT.kowake.CSV.mac) - 社会保険診療報酬支払基金 の [医薬品マスター](https://www.ssk.or.jp/seikyushiharai/tensuhyo/kihonmasta/kihonmasta_04.html) のCSVファイル (全件分ファイル) を整形して kowake ツールの医薬品マスタデータとして使えるようにするための [秀丸エディタ](https://hide.maruo.co.jp/software/hidemaru.html) 用マクロです。使用するには、医薬品マスターのCSVファイルを秀丸エディタで開いて、このマクロを実行して保存し、それをExcelで開いて、医薬品マスタの予備データ以降に貼り付けてください。なお、テキストの文字コードは Shift-JIS です。
+
+[sakura.FORMAT.kowake.CSV.mac](https://github.com/Kimitsuna-Goblin/kowake/blob/master/sakura.FORMAT.kowake.CSV.mac) - 上と同様の [サクラエディタ](https://sakura-editor.github.io/) 用マクロです。使用するには、医薬品マスターのCSVファイルをサクラエディタで開いて、このマクロを実行して保存し、それをExcelで開いて、医薬品マスタの予備データ以降に貼り付けてください。テキストの文字コードは Shift-JIS です。ただし、医薬品名のソートのアルゴリズムが秀丸エディタと違うため、医薬品の並び順が少し変わります。特に、ごく一部ですが、規格の数値が昇順に並ばない部分がありますので、ご注意ください。
+
 [How-To-Use.mp4](https://github.com/Kimitsuna-Goblin/kowake/blob/master/How-To-Use.mp4) - 使い方の説明動画です。[YouTube](https://youtu.be/XuWe7ZRz2yQ) にも同じ動画があります (YouTube の動画は限定公開のため、検索はできません)。
 
 [LICENSE](https://github.com/Kimitsuna-Goblin/kowake/blob/master/LICENSE) - ライセンスファイルです。本 Excel ファイルを再配布する場合は、必ず添付してください。
@@ -56,7 +60,7 @@ YouTube の [使い方の説明動画](https://youtu.be/XuWe7ZRz2yQ) を見て�
 
 ### 医薬品マスタデータ - Data
 
-+ 医薬品マスタのデータは、社会保険診療報酬支払基金 の 2023年11月27日 のデータをもとに作成しています。
++ 医薬品マスタのデータは、[社会保険診療報酬支払基金](https://www.ssk.or.jp/seikyushiharai/tensuhyo/kihonmasta/kihonmasta_04.html) の 2023年11月27日 のデータをもとに作成しています。
   もし、薬価の誤りなどの問題点を発見されましたら、お知らせください。
 
 + 注: 2023年8月1日版 はデータに誤りがありますので、使用しないでください。最新版をご使用ください。
