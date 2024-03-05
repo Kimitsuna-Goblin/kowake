@@ -1,9 +1,9 @@
 // kowake ツール用に、社会保険診療報酬支払基金の医薬品マスターのCSVファイルを整形する秀丸エディタ用マクロ
-// (C) 2023 Ura Kimitsuna
+// (C) 2024 Ura Kimitsuna
 // Released under the MIT license. see https://opensource.org/licenses/MIT/
 // まあ、要するに、一応著作権は主張してるけど、勝手に編集したり再配布したりしていいよってことです。
 replaceallfast "\"([．０-９Ｗ／Ｖｗｖ]+％)([^　\",\\n]+)", "\"\\2\\1", 0x00000012;
-replaceallfast "[　（]+[^　（]*として[^\",]+", "", 0x00000012;
+replaceallfast "[　（]+[^　（]*として[^\",]*\"", "\"", 0x00000012;
 replaceallfast "^[^\\n]*[^Ｔ]ＯＡ[^\\n]*\\n", "", 0x00000012;
 replaceallfast "^[^\\n]*[１-９][歯顎][^\\n]*\\n", "", 0x00000012;
 replaceallfast "（レボフロキサシン）", "", 0;
