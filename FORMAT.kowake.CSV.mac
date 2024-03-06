@@ -2,6 +2,8 @@
 // (C) 2024 Ura Kimitsuna
 // Released under the MIT license. see https://opensource.org/licenses/MIT/
 // まあ、要するに、一応著作権は主張してるけど、勝手に編集したり再配布したりしていいよってことです。
+//
+// 医薬品名を整形
 replaceallfast "\"([．０-９Ｗ／Ｖｗｖ]+％)([^　\",\\n]+)", "\"\\2\\1", 0x00000012;
 replaceallfast "[　（]+[^　（]*として[^\",]*\"", "\"", 0x00000012;
 replaceallfast "^[^\\n]*[^Ｔ]ＯＡ[^\\n]*\\n", "", 0x00000012;
@@ -9,23 +11,28 @@ replaceallfast "^[^\\n]*[１-９][歯顎][^\\n]*\\n", "", 0x00000012;
 replaceallfast "（レボフロキサシン）", "", 0;
 replaceallfast "\"([０-９ｍｃｇ]+ｇ)([^　\",\\n]+)", "\"\\2\\1", 0x00000012;
 replaceallfast "^([^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,)\"\",", "\\1\"－\",", 0x00000012;
+// 金額 0 の行を削除
 replaceallfast "^[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,\"[0.]+\",[^\\n]*\\n", "", 0x00000012;
-#oldCompatibleMode = setcompatiblemode( 0x00100000 );
-setsearch "^[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,", 0x00000012;
-selectallfound;
+// 英数字を半角にする
+selectall;
 filter "", "ToHankakuAlnum";
 escape;
+// “化血研" を“化血研”に戻す
 replaceallfast "“化血研\"", "“化血研”", 0;
+// ソート用に漢数字を数値に変換 (ソートに必要な部分のみ)
 replaceallfast "([0-9]+)千", "\\1000#千", 0x00000012;
 replaceallfast "([0-9]+)万", "\\10000#万", 0x00000012;
 replaceallfast "([^0-9#])千", "\\11000#1千", 0x00000012;
 replaceallfast "([^0-9#])百万", "\\11000000#1百万", 0x00000012;
 selectall;
-setcompatiblemode 0x0F;
-filter "" , "Sort" , "000100110004001\"11001";
+#oldCompatibleMode = setcompatiblemode( 0x0F );
+filter "", "Sort", "000100110004001\"11001";
 setcompatiblemode( #oldCompatibleMode );
 escape;
+// ソート用の数値を漢数字に戻す
 replaceallfast "000#千", "千", 0;
 replaceallfast "0000#万", "万", 0;
 replaceallfast "1000#1千", "千", 0;
 replaceallfast "1000000#1百万", "百万", 0;
+// 「文字数」を削除して「医薬品名」に「基本漢字名称」をコピー
+replaceallfast "^((\"[^\"]*\",){3})\"[^\"]*\",\"[^\"]*\",((\"[^\"]*\",){29})(\"[^\"]*\",)", "\\1\\3\\2\\3", 0x00000012;
