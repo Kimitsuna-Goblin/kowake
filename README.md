@@ -13,7 +13,7 @@
 
 [FORMAT.kowake.CSV.mac](https://github.com/Kimitsuna-Goblin/kowake/blob/master/FORMAT.kowake.CSV.mac) - 社会保険診療報酬支払基金 の [医薬品マスター](https://www.ssk.or.jp/seikyushiharai/tensuhyo/kihonmasta/kihonmasta_04.html) のCSVファイル (全件分ファイル) を整形して kowake ツールの医薬品マスタデータとして使えるようにするための [秀丸エディタ](https://hide.maruo.co.jp/software/hidemaru.html) 用マクロです。
 
-使用するには、医薬品マスターのCSVファイルを秀丸エディタで開いて、このマクロを実行して保存し、それをExcelで開いて、医薬品マスタの予備データ以降に貼り付けてください。なお、テキストの文字コードは Shift-JIS です。
+使用するには、医薬品マスターのCSVファイルを秀丸エディタで開いて、このマクロを実行して保存し、それをExcelで開いて、医薬品マスタの予備データ以降に貼り付けてください。テキストの文字コードは Shift-JIS です。
 
 [sakura.FORMAT.kowake.CSV.mac](https://github.com/Kimitsuna-Goblin/kowake/blob/master/sakura.FORMAT.kowake.CSV.mac) - 上と同様の [サクラエディタ](https://sakura-editor.github.io/) 用マクロです。
 
@@ -30,10 +30,11 @@
 
 ## 動作環境 - Operating Environment
 
-Windows 11 上の Microsoft Excel 2016 および Microsoft Excel for Microsoft 365 64 ビット で動作確認しています。
+Windows 11 上の Microsoft Excel for Microsoft 365 64 ビット で動作確認しています。
 
-Excel Online では、残念ながら動作しません (2021年2月11日確認)。
-医薬品名の絞り込みのために、リストのデータ入力規則に計算式を埋め込んでいますが、それに対応してないようです。
++ LibreOffice でも動く (はず) です (印刷範囲が少しズレるかも知れません)。
+
++ Web 上の Microsoft 365 でも一応動きます (罫線表示などが少しおかしくなることがあります)。
 
 
 ## 使用方法 - Usage
@@ -66,10 +67,8 @@ YouTube の [使い方の説明動画](https://youtu.be/XuWe7ZRz2yQ) を見て�
 
 ### 医薬品マスタデータ - Data
 
-+ 医薬品マスタのデータは、[社会保険診療報酬支払基金](https://www.ssk.or.jp/seikyushiharai/tensuhyo/kihonmasta/kihonmasta_04.html) の 2023年11月27日 のデータをもとに作成しています。
++ 医薬品マスタのデータは、[社会保険診療報酬支払基金](https://www.ssk.or.jp/seikyushiharai/tensuhyo/kihonmasta/kihonmasta_04.html) の 2024年3月5日 のデータをもとに作成しています。
   もし、薬価の誤りなどの問題点を発見されましたら、お知らせください。
-
-+ 注: 2023年8月1日版 はデータに誤りがありますので、使用しないでください。最新版をご使用ください。
 
 
 ## ライセンス - License
