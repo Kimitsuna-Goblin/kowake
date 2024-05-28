@@ -67,7 +67,7 @@ YouTube の [使い方の説明動画](https://youtu.be/XuWe7ZRz2yQ) を見て�
 
 ### 医薬品マスタデータ - Data
 
-+ 医薬品マスタのデータは、[社会保険診療報酬支払基金](https://www.ssk.or.jp/seikyushiharai/tensuhyo/kihonmasta/kihonmasta_04.html) の 2024年3月5日 のデータをもとに作成しています。
++ 医薬品マスタのデータは、[社会保険診療報酬支払基金](https://www.ssk.or.jp/seikyushiharai/tensuhyo/kihonmasta/kihonmasta_04.html) の 2024年5月21日 のデータをもとに作成しています。
   もし、薬価の誤りなどの問題点を発見されましたら、お知らせください。
 
 
